@@ -30,7 +30,7 @@ The processed datasets are then train on different models and hyperparameters an
 - runtime : Approximately 50 minutes
 EXPECTED OUPUT : Best pkl model files and a metadata json file containing model paths and model details
 
-5.best_models.ipynb
+5. best_models.ipynb
 The file loads the metadata json and pkl files for the best models per region and uses this to generate the test data predictions.
 - runtime : less than 1 minute
 EXPECTED OUTPUT : final_submission.csv
