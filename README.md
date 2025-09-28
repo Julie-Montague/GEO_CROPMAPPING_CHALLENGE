@@ -25,7 +25,7 @@ We then upload the datasets from notebook 3 to google colab for use on the model
 
 ## CODE NOTEBOOKS RUN ON GOOGLE COLAB
 4. Model_tuning.ipynb
-This notebook ingests train_data_combined and test_data combined, performs exploratory data analysis, preprocessing and feature engineering.
+- This notebook ingests train_data_combined and test_data combined, performs exploratory data analysis, preprocessing and feature engineering.
 The processed datasets are then train on different models and hyperparameters and the best models saved for submission file generation.
 - runtime : Approximately 50 minutes
 EXPECTED OUPUT : Best pkl model files and a metadata json file containing model paths and model details
