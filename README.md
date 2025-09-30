@@ -43,6 +43,12 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 5. Run 'ModelTuning' to evaluate the best models, otherwise skip this step to use pre-saved best models
 6. Run 'FinalSubmission' using the best models only (saved in best_models folder)
 
+### NOTEBOOK RUNTIME
+   1. TrainDataretrieval.ipynb - approximately 1 hour
+   2. DataProcessing.ipynb - approximately 5 minutes
+   3. ModelTuning.ipynb - approximately 50 minutes (due to hyperparameter tuning)
+   4. FinalSubmission.ipynb - less than 1 minute
+
 ## OVERVIEW
 Advances in machine learning and artificial intelligence offer the potential to significantly improve cropland and land cover classification by leveraging time-series satellite imagery.
 This challenge focuses on arid and semi-arid regions, where the primary difficulty lies in distinguishing cropland from pastures and steppe land. Participants are tasked with designing and evaluating methods for cropland mapping in two test regions:
@@ -58,11 +64,6 @@ This challenge focuses on arid and semi-arid regions, where the primary difficul
 
  4. Global Impact: Contribute to better agricultural monitoring and food security by enhancing global cropland mapping initiatives.
 
-## NOTEBOOK RUNTIME
-1. TrainDataretrieval.ipynb - approximately 1 hour
-2. DataProcessing.ipynb - approximately 5 minutes
-3. ModelTuning.ipynb - approximately 50 minutes (due to hyperparameter tuning)
-4. FinalSubmission.ipynb - less than 1 minute
 
 ## ARCHITECTURE DIAGRAM
 
