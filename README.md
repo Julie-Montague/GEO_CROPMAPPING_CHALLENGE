@@ -2,34 +2,33 @@
 This project contains the notebooks used for the zindi crop_challenge
 
 ## REPO STRUCTURE
-|----best_models/
-|       |--- metadata.json
-|       |--- region_0__XGBoost.pkl
-|       |--- region_1__RandomForest.pkl
-|----Modelling_data/
-|       |--- test_data.csv
-|       |--- train_data.csv
-|
-|----raw_test_data/
-|       |--- Sentinel1.csv
-|       |--- Sentinel2.csv
-|       |--- Test.csv
-|----raw_train_data/
-|       |--- train_S1.csv
-|       |--- train_S2.csv
-|       |--- Fergana_training_samples.dbf
-|       |--- Fergana_training_samples.shp
-|       |--- Fergana_training_samples.shx
-|       |--- Orenburg_training_samples.dbf
-|       |--- Orenburg_training_samples.shp
-|       |--- Orenburg_training_samples.shx
-|
-|----TrainDataretrieval.ipynb
-|----DataProcessing.ipynb
-|----ModelTuning.ipynb
-|----FinalSubmission.ipynb
-|---- requirements.txt
-|---- Readme.md
+GEO_CROPMAPPING_CHALLENGE/
+├─ best_models/
+│  ├─ metadata.json
+│  ├─ region_0_XGBoost.pkl
+│  └─ region_1_RandomForest.pkl
+├─ Modelling_data/
+│  ├─ test_data.csv
+│  └─ train_data.csv
+├─ raw_test_data/
+│  ├─ Sentinel1.csv
+│  ├─ Sentinel2.csv
+│  └─ Test.csv
+├─ raw_train_data/
+│  ├─ train_S1.csv
+│  ├─ train_S2.csv
+│  ├─ Fergana_training_samples.dbf
+│  ├─ Fergana_training_samples.shp
+│  ├─ Fergana_training_samples.shx
+│  ├─ Orenburg_training_samples.dbf
+│  ├─ Orenburg_training_samples.shp
+│  └─ Orenburg_training_samples.shx
+├─ TrainDataretrieval.ipynb
+├─ DataProcessing.ipynb
+├─ ModelTuning.ipynb
+├─ FinalSubmission.ipynb
+├─ requirements.txt
+└─ README.md
 
 ## How to run the code
 1. Make sure to save the filed as lsited in the folder
