@@ -1,4 +1,4 @@
-# GEO_CROPMAPPING_CHALLENGE
+# GEOAI CHALLENGE FOR CROPLAND MAPPING IN DRY ENVIRONMENTS
 This project contains the notebooks used for the zindi GEOAI Challenge for Cropland Mapping in Dry Environments
 
 ## REPO STRUCTURE
