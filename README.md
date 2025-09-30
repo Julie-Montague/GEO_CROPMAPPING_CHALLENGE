@@ -2,7 +2,7 @@
 This project contains the notebooks used for the zindi crop_challenge
 
 ## REPO STRUCTURE
-GEO_CROPMAPPING_CHALLENGE/
+\GEO_CROPMAPPING_CHALLENGE/
 ├─ best_models/
 │  ├─ metadata.json
 │  ├─ region_0_XGBoost.pkl
@@ -28,7 +28,7 @@ GEO_CROPMAPPING_CHALLENGE/
 ├─ ModelTuning.ipynb
 ├─ FinalSubmission.ipynb
 ├─ requirements.txt
-└─ README.md
+└─ README.md \
 
 ## How to run the code
 1. Make sure to save the filed as lsited in the folder
