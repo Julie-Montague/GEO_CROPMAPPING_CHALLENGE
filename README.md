@@ -36,7 +36,7 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 └─ README.md
 ```
 ## How to run the code
-1. Make sure to save the filed as lsited in the folder
+1. Make sure to save the files as shown above
 2. Run 'pip install -r requirements.txt'
 3. Run 'TrainDataretrieval.ipynb' to retrieve train data from google earth engine, otherwise skip this step to use already saved data.
 4. Run 'DataProcessing' to clean,aggregate,preprocess and feature engineeer the train and test data
@@ -61,7 +61,7 @@ This challenge focuses on arid and semi-arid regions, where the primary difficul
 ## NOTEBOOK RUNTIME
 1. TrainDataretrieval.ipynb - approximately 1 hour
 2. DataProcessing.ipynb - apporximately 5 minutes
-3. ModelTuning.ipynb - approximately 30 minutes (due to hyperparameter tuning)
+3. ModelTuning.ipynb - approximately 50 minutes (due to hyperparameter tuning)
 4. FinalSubmission.ipynb - less than 1 minute
 
 ## ARCHITECTURE DIAGRAM
