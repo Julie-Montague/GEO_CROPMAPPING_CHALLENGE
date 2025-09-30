@@ -39,12 +39,10 @@ This project contains the notebooks used for the zindi crop_challenge
 ## How to run the code
 1. Make sure to save the filed as lsited in the folder
 2. Run 'pip install -r requirements.txt'
-3. Run 'TrainDataretrieval.ipynb' to retrieve train data
+3. Run 'TrainDataretrieval.ipynb' to retrieve train data from google earth engine, otherwise skip this step to use already saved data.
 4. Run 'DataProcessing' to clean,aggregate,preprocess and feature engineeer the train and test data
-5. Run 'ModelTuning' to evaluate the best models
+5. Run 'ModelTuning' to evaluate the best models, otherwise skip this step to use pre-saved best models
 6. Run 'FinalSubmission' using the best models only (saved in best_models folder)
-
-PS : To generate the submission file without generating new models, skip step #5 as #6 uses the presaved best models
 
 ## OVERVIEW
 Advances in machine learning and artificial intelligence offer the potential to significantly improve cropland and land cover classification by leveraging time-series satellite imagery.
@@ -62,10 +60,10 @@ This challenge focuses on arid and semi-arid regions, where the primary difficul
  4. Global Impact: Contribute to better agricultural monitoring and food security by enhancing global cropland mapping initiatives.
 
 ## NOTEBOOK RUNTIME
-1. TrainDataretrieval.ipynb - 
-2. DataProcessing.ipynb - 
-3. ModelTuning.ipynb - 
-4. FinalSubmission.ipynb - 
+1. TrainDataretrieval.ipynb - approximately 1 hour
+2. DataProcessing.ipynb - apporximately 5 minutes
+3. ModelTuning.ipynb - approximately 30 minutes (due to hyperparameter tuning)
+4. FinalSubmission.ipynb - less than 1 minute
 
 ## ARCHITECTURE DIAGRAM
 
