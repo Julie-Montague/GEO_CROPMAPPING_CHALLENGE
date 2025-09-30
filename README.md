@@ -2,16 +2,44 @@
 This project contains the notebooks used for the zindi crop_challenge
 
 ## REPO STRUCTURE
-
-## How to run the code
-|----data/
+|----best_models/
+|       |--- metadata.json
+|       |--- region_0__XGBoost.pkl
+|       |--- region_1__RandomForest.pkl
+|----Modelling_data/
 |       |--- test_data.csv
 |       |--- train_data.csv
 |
-|----submissions/ (models predictions on the test data)
+|----raw_test_data/
+|       |--- Sentinel1.csv
+|       |--- Sentinel2.csv
+|       |--- Test.csv
+|----raw_train_data/
+|       |--- train_S1.csv
+|       |--- train_S2.csv
+|       |--- Fergana_training_samples.dbf
+|       |--- Fergana_training_samples.shp
+|       |--- Fergana_training_samples.shx
+|       |--- Orenburg_training_samples.dbf
+|       |--- Orenburg_training_samples.shp
+|       |--- Orenburg_training_samples.shx
+|
+|----TrainDataretrieval.ipynb
+|----DataProcessing.ipynb
+|----ModelTuning.ipynb
+|----FinalSubmission.ipynb
 |---- requirements.txt
 |---- Readme.md
-|--- {notebook}.ipynb
+
+## How to run the code
+1. Make sure to save the filed as lsited in the folder
+2. Run 'pip install -r requirements.txt'
+3. Run 'TrainDataretrieval.ipynb' to retrieve train data
+4. Run 'DataProcessing' to clean,aggregate,preprocess and feature engineeer the train and test data
+5. Run 'ModelTuning' to evaluate the best models
+6. Run 'FinalSubmission' using the best models only (saved in best_models folder)
+
+PS : To generate the submission file without generating new models, skip step #5 as #6 uses the presaved best models
 
 ## OVERVIEW
 Advances in machine learning and artificial intelligence offer the potential to significantly improve cropland and land cover classification by leveraging time-series satellite imagery.
