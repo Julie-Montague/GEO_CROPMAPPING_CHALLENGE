@@ -44,7 +44,7 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 6. Run 'FinalSubmission' using the best models only (saved in best_models folder)
 
 ### NOTEBOOK RUNTIME
-   1. TrainDataretrieval.ipynb - approximately 1 hour
+   1. TrainDataretrieval.ipynb - approximately 3 hourS
    2. DataProcessing.ipynb - approximately 5 minutes
    3. ModelTuning.ipynb - approximately 50 minutes (due to hyperparameter tuning)
    4. FinalSubmission.ipynb - less than 1 minute
