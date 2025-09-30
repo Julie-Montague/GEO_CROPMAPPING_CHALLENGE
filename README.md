@@ -119,7 +119,7 @@ This challenge focuses on arid and semi-arid regions, where the primary difficul
    - Indices like TVI (Triangular Vegetation Index) and TGI (Triangular Greenness Index) have wide ranges thus we clip to reduce the noise level.
    - Run a correlation check to eliminate correlation features. This reduces the dataframe size from 713 to 514
   
-   ### FEATURE LIST
+   #### FEATURE LIST
    - 'ID' : Unique identifier
    - 'region' : The region for the data point ( Fergana or Orenburg)
    - 'month' : Month of the year for the specific data point
