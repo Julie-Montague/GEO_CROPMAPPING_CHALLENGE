@@ -35,7 +35,7 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 ├─ requirements.txt
 └─ README.md
 ```
-## How to run the code
+## HOW TO RUN THE CODE
 1. Make sure to save the files as shown above
 2. Run 'pip install -r requirements.txt'
 3. Run 'TrainDataretrieval.ipynb' to retrieve train data from google earth engine, otherwise skip this step to use already saved data.
@@ -69,7 +69,7 @@ This challenge focuses on arid and semi-arid regions, where the primary difficul
 - Cropland exhibits distinct seasonal amplitude and timing, even when absolute greenness is modest in drylands.
 - Training and test data come from related but not identical distributions (region/seasonal shift); mitigate with region-aware validation and simple domain controls.
   
-### Extract
+### EXTRACT
  1. Train data
 - The provided shp files were used to extract sentinel 1 and 2 data from google earth engine (s1 : COPERNICUS/S1_GRD, s2: COPERNICUS/S2_SR_HARMONIZED).
 - The train data was extracted using the dates available on the test data
