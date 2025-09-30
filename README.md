@@ -78,8 +78,9 @@ This challenge focuses on arid and semi-arid regions, where the primary difficul
  2. Test Data
 - As the provided geolocations were masked, the test data used relied on the provided sentinel 1 and 2 data.
 
-- Sentinel 1 data : focuses on radar data
-- Sentinel 2 data: high spatial resolution optical mission data
+- Data Description :
+   - Sentinel 1 data : focuses on radar data
+   - Sentinel 2 data: high spatial resolution optical mission data
 
   ### TRANSFORMATION
   #### CLEANSING
