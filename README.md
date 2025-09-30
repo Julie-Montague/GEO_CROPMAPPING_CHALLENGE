@@ -4,7 +4,7 @@ This project contains the notebooks used for the zindi crop_challenge
 ## REPO STRUCTURE
 
 ```bash
-GEO_CROPMAPPING_CHALLENGE/
+4th_place_GEO_AI_Cropland_Mapping_Challenge/
 ├─ best_models/
 │  ├─ metadata.json
 │  ├─ region_0_XGBoost.pkl
@@ -29,6 +29,7 @@ GEO_CROPMAPPING_CHALLENGE/
 ├─ DataProcessing.ipynb
 ├─ ModelTuning.ipynb
 ├─ FinalSubmission.ipynb
+├─ final_submission.csv
 ├─ requirements.txt
 └─ README.md
 ```
