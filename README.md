@@ -60,7 +60,7 @@ This challenge focuses on arid and semi-arid regions, where the primary difficul
 
 ## NOTEBOOK RUNTIME
 1. TrainDataretrieval.ipynb - approximately 1 hour
-2. DataProcessing.ipynb - apporximately 5 minutes
+2. DataProcessing.ipynb - approximately 5 minutes
 3. ModelTuning.ipynb - approximately 50 minutes (due to hyperparameter tuning)
 4. FinalSubmission.ipynb - less than 1 minute
 
