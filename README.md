@@ -121,84 +121,84 @@ This challenge focuses on arid and semi-arid regions, where the primary difficul
 - Run a correlation check to eliminate correlation features. This reduces the dataframe size from 713 to 514
   
 ### FEATURE LIST
-'ID' : Unique identifier
-'region' : The region for the data point ( Fergana or Orenburg)
-'month' : Month of the year for the specific data point
+- 'ID' : Unique identifier
+- 'region' : The region for the data point ( Fergana or Orenburg)
+- 'month' : Month of the year for the specific data point
 
 Raw Bands : 
- 'B11','B12' : SWIR reflectance (moisture, soil, burn, mineral)
- 'B2': Blue reflectance (atmosphere/water penetration)
- 'B3': Green reflectance (vegetation “green peak”)
- 'B4': Red reflectance (chlorophyll absorption)
- 'B5','B6','B7' : Red-edge reflectance (chlorophyll/leaf structure sensitive)
- 'B8', 'B8A' : NIR reflectance (biomass/leaf structure)
+ - 'B11','B12' : SWIR reflectance (moisture, soil, burn, mineral)
+ - 'B2': Blue reflectance (atmosphere/water penetration)
+ - 'B3': Green reflectance (vegetation “green peak”)
+ - 'B4': Red reflectance (chlorophyll absorption)
+ - 'B5','B6','B7' : Red-edge reflectance (chlorophyll/leaf structure sensitive)
+ - 'B8', 'B8A' : NIR reflectance (biomass/leaf structure)
  
 Sar Channels :
- 'VH': Sentinel-1 backscatter (cross-pol); vegetation volume/structure
- 'VV' : Sentinel-1 backscatter (co-pol); geometry/roughness/moisture
- 'vh_vv_ratio' : Ratio VH/VV (phenology & moisture sensitive)
- 'vh_minus_vv' : VH − VV (difference highlighting structure)
+ - 'VH': Sentinel-1 backscatter (cross-pol); vegetation volume/structure
+ - 'VV' : Sentinel-1 backscatter (co-pol); geometry/roughness/moisture
+ - 'vh_vv_ratio' : Ratio VH/VV (phenology & moisture sensitive)
+ - 'vh_minus_vv' : VH − VV (difference highlighting structure)
 
 Core Vegetation Indices : 
- 'GNDVI': Green NDVI: (B8 - B3)/(B8 + B3) — more sensitive to chlorophyll/nitrogen
- 'EVI2' : Two-band EVI: 2.5*(B8 - B4)/(B8 + 2.4*B4 + 1) — EVI without blue band
- 'NGRDI': Normalized Green-Red Diff.: (B3 - B4)/(B3 + B4) — RGB greenness contrast
- 'WDRVI' : Wide Dynamic Range VI: (α*B8 - B4)/(α*B8 + B4) (α≈0.1–0.2) — keeps sensitivity at high biomass.
- 'EVI' : Enhanced VI: 2.5*(B8 - B4)/(B8 + 6*B4 - 7.5*B2 + 1) — reduces soil/atmosphere effects
- 'NDVI' : Normalized Difference Vegetation Index - (B8 - B4)/(B8 + B4) — canopy greenness/LAI proxy
- 'TNDVI' : Transformed NDVI (common form): sqrt(NDVI + 0.5) — smoothed greenness scale
- 'VDVI' : Visible-band DVI: (2*B3 - B4 - B2)/(2*B3 + B4 + B2) — greenness from RGB only
- 'TVI' : Transformed VI: sqrt((B8 - B4)/(B8 + B4) + 0.5) — contrast-enhanced NDVI transform
- 'EXG': Excess Green: 2*B3 - B4 - B2 (or normalized variants) — vegetation from RGB
- 'RDVI': Renormalized DVI: (B8 - B4)/sqrt(B8 + B4) — linearizes NDVI vs. biomass
+ - 'GNDVI': Green NDVI: (B8 - B3)/(B8 + B3) — more sensitive to chlorophyll/nitrogen
+ - 'EVI2' : Two-band EVI: 2.5*(B8 - B4)/(B8 + 2.4*B4 + 1) — EVI without blue band
+ - 'NGRDI': Normalized Green-Red Diff.: (B3 - B4)/(B3 + B4) — RGB greenness contrast
+ - 'WDRVI' : Wide Dynamic Range VI: (α*B8 - B4)/(α*B8 + B4) (α≈0.1–0.2) — keeps sensitivity at high biomass.
+ - 'EVI' : Enhanced VI: 2.5*(B8 - B4)/(B8 + 6*B4 - 7.5*B2 + 1) — reduces soil/atmosphere effects
+ - 'NDVI' : Normalized Difference Vegetation Index - (B8 - B4)/(B8 + B4) — canopy greenness/LAI proxy
+ - 'TNDVI' : Transformed NDVI (common form): sqrt(NDVI + 0.5) — smoothed greenness scale
+ - 'VDVI' : Visible-band DVI: (2*B3 - B4 - B2)/(2*B3 + B4 + B2) — greenness from RGB only
+ - 'TVI' : Transformed VI: sqrt((B8 - B4)/(B8 + B4) + 0.5) — contrast-enhanced NDVI transform
+ - 'EXG': Excess Green: 2*B3 - B4 - B2 (or normalized variants) — vegetation from RGB
+ - 'RDVI': Renormalized DVI: (B8 - B4)/sqrt(B8 + B4) — linearizes NDVI vs. biomass
  
 Soil-adjusted & soil-related:
- 'BSI' : Bare Soil Index: ((B11 + B4) - (B8 + B2))/((B11 + B4) + (B8 + B2)) — bare ground vs veg
- 'SAVI' : Soil-Adjusted VI: (1+L)*(B8 - B4)/(B8 + B4 + L) (L≈0.5) — reduces soil background
- 'PVI' : Perpendicular VI: (B8 - a*B4 - b)/sqrt(1+a^2) (uses soil-line slope a, intercept b)
- 'OSAVI' : Optimized SAVI: (B8 - B4)/(B8 + B4 + 0.16) — fixed L=0.16
- 'SI' : Shadow Index: ((1 - B2)*(1 - B3)*(1 - B4))^(1/3) — self-shadowing detection
+ - 'BSI' : Bare Soil Index: ((B11 + B4) - (B8 + B2))/((B11 + B4) + (B8 + B2)) — bare ground vs veg
+ - 'SAVI' : Soil-Adjusted VI: (1+L)*(B8 - B4)/(B8 + B4 + L) (L≈0.5) — reduces soil background
+ - 'PVI' : Perpendicular VI: (B8 - a*B4 - b)/sqrt(1+a^2) (uses soil-line slope a, intercept b)
+ - 'OSAVI' : Optimized SAVI: (B8 - B4)/(B8 + B4 + 0.16) — fixed L=0.16
+ - 'SI' : Shadow Index: ((1 - B2)*(1 - B3)*(1 - B4))^(1/3) — self-shadowing detection
 
 Water / moisture:
- 'NDWI' : (McFeeters water bodies): (B3 - B8)/(B3 + B8) — surface water highlight
- 'MNDWI' : Modified NDWI (Xu): (B3 - B11)/(B3 + B11) — suppresses built-up, enhances water
- 'NDMI' : (aka NDWI-Gao vegetation water): (B8 - B11)/(B8 + B11) — canopy moisture
- 'MI' : Moisture Stress Index (often labeled MI/MSI): B11/B8 — higher values = drier canopy
+ - 'NDWI' : (McFeeters water bodies): (B3 - B8)/(B3 + B8) — surface water highlight
+ - 'MNDWI' : Modified NDWI (Xu): (B3 - B11)/(B3 + B11) — suppresses built-up, enhances water
+ - 'NDMI' : (aka NDWI-Gao vegetation water): (B8 - B11)/(B8 + B11) — canopy moisture
+ - 'MI' : Moisture Stress Index (often labeled MI/MSI): B11/B8 — higher values = drier canopy
 
 Red-edge & chlorophyll proxies:
- 'NDRE' : Red-edge NDVI: (B8 - B5)/(B8 + B5) — chlorophyll at higher LAI
- 'NDVIre' : NDVI with red-edge (one common S2 form): (B8A - B6)/(B8A + B6) — greenness using RE
- 'CIre' ; Chlorophyll Index (red-edge): (B8/B5) - 1
- 'RENDVI' : Red-edge NDVI (705/750 nm): (B6 - B5)/(B6 + B5) — stress/Chl changes
- 'CCCI' : Canopy Chl Content Index: NDRE / NDVI — chlorophyll normalized by greenness
- 'MCARI' : Modified Chlorophyll Absorption Ratio Index: ((B5 - B4) - 0.2*(B5 - B3))*(B5/B4) — chlorophyll/structure
- 'MTCI' : MERIS Terrestrial Chl Index (S2 approx.): (B6 - B5)/(B7 - B6) — canopy chlorophyll
- 'S2REP' : S2 Red-Edge Position (nm): 705 + 35 * (((B7 + B4)/2 - B5)/(B6 - B5)) — pigment/Chl shift
+ - 'NDRE' : Red-edge NDVI: (B8 - B5)/(B8 + B5) — chlorophyll at higher LAI
+ - 'NDVIre' : NDVI with red-edge (one common S2 form): (B8A - B6)/(B8A + B6) — greenness using RE
+ - 'CIre' ; Chlorophyll Index (red-edge): (B8/B5) - 1
+ - 'RENDVI' : Red-edge NDVI (705/750 nm): (B6 - B5)/(B6 + B5) — stress/Chl changes
+ - 'CCCI' : Canopy Chl Content Index: NDRE / NDVI — chlorophyll normalized by greenness
+ - 'MCARI' : Modified Chlorophyll Absorption Ratio Index: ((B5 - B4) - 0.2*(B5 - B3))*(B5/B4) — chlorophyll/structure
+ - 'MTCI' : MERIS Terrestrial Chl Index (S2 approx.): (B6 - B5)/(B7 - B6) — canopy chlorophyll
+ - 'S2REP' : S2 Red-Edge Position (nm): 705 + 35 * (((B7 + B4)/2 - B5)/(B6 - B5)) — pigment/Chl shift
 
 Pigments / senescence / stress : 
- 'ARVI': Atmospherically Resistant VI: (B8 - (2*B4 - B2))/(B8 + (2*B4 - B2)) — aerosol-robust greenness
- 'SIPI' : Structure-Insensitive Pigment Index: (B8 - B1)/(B8 - B4) (common variant uses blue instead of aerosol: (B8 - B2)/(B8 - B4)) — carotenoids vs chlorophyll (stress)
- 'PSRI' : Plant Senescence Reflectance Index: (B4 - B2)/B6 (R−B over RE) — carotenoid/chl ratio, senescence
+ - 'ARVI': Atmospherically Resistant VI: (B8 - (2*B4 - B2))/(B8 + (2*B4 - B2)) — aerosol-robust greenness
+ - 'SIPI' : Structure-Insensitive Pigment Index: (B8 - B1)/(B8 - B4) (common variant uses blue instead of aerosol: (B8 - B2)/(B8 - B4)) — carotenoids vs chlorophyll (stress)
+ - 'PSRI' : Plant Senescence Reflectance Index: (B4 - B2)/B6 (R−B over RE) — carotenoid/chl ratio, senescence
 
 Yellowness / flowering (useful in drylands & croplands)  
- 'RYI' ; Ratio Yellowness Index (common in flowering studies; exact variant differs by paper, e.g., green/blue or red/yellow ratio)
- 'NDYI' : Normalized Difference Yellowness Index: (B3 - B2)/(B3 + B2) — blooming/yellow flowers (canola, trees)
- 'DYI' : Difference Yellowness Index: (B3 - B2) — simple green–blue difference for yellowing
+ - 'RYI' ; Ratio Yellowness Index (common in flowering studies; exact variant differs by paper, e.g., green/blue or red/yellow ratio)
+ - 'NDYI' : Normalized Difference Yellowness Index: (B3 - B2)/(B3 + B2) — blooming/yellow flowers (canola, trees)
+ - 'DYI' : Difference Yellowness Index: (B3 - B2) — simple green–blue difference for yellowing
 
 Water/ice & burn:
- 'BAI' ; Burn Area Index: 1/((0.1 - B4)^2 + (0.06 - B8)^2) — highlights burned targets
- 'NDSI' : Normalized Difference Snow Index: (B3 - B11)/(B3 + B11) — snow/ice masking
- 'NBR' : Normalized Burn Ratio: (B8 - B12)/(B8 + B12) — burn severity; post-fire differencing often used
+ - 'BAI' ; Burn Area Index: 1/((0.1 - B4)^2 + (0.06 - B8)^2) — highlights burned targets
+ - 'NDSI' : Normalized Difference Snow Index: (B3 - B11)/(B3 + B11) — snow/ice masking
+ - 'NBR' : Normalized Burn Ratio: (B8 - B12)/(B8 + B12) — burn severity; post-fire differencing often used
   
 Others:
-  'MMSR' : Typically refers to a Modified (Modified) Simple Ratio variant using red-edge bands; a common related index is MSR705
-  'TGI' : Greenness proxy using only visible bands
-  'GCVI' : Estimates chlorophyll content; more sensitive than NDVI in high biomass
-  'ACI' : Indicates red pigmentation (anthocyanins) in vegetation, used in stress or senescence studies
-  'CVI' : Highlights chlorophyll by combining NIR, red, and green
-  'AVI' : Non-linear vegetation index to emphasize high biomass
-  'NPCRI' : Proxy for chlorophyll/carotenoid ratio; higher = more carotenoids or senescence
-  'TCARI': Refines chlorophyll detection, reducing background/LAI effects
+  - 'MMSR' : Typically refers to a Modified (Modified) Simple Ratio variant using red-edge bands; a common related index is MSR705
+  - 'TGI' : Greenness proxy using only visible bands
+  - 'GCVI' : Estimates chlorophyll content; more sensitive than NDVI in high biomass
+  - 'ACI' : Indicates red pigmentation (anthocyanins) in vegetation, used in stress or senescence studies
+  - 'CVI' : Highlights chlorophyll by combining NIR, red, and green
+  - 'AVI' : Non-linear vegetation index to emphasize high biomass
+  - 'NPCRI' : Proxy for chlorophyll/carotenoid ratio; higher = more carotenoids or senescence
+  - 'TCARI': Refines chlorophyll detection, reducing background/LAI effects
  
 ### LOAD
 The final datasets are saved as csv files :
