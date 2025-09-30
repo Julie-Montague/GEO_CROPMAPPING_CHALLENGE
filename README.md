@@ -9,9 +9,8 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 │  ├─ metadata.json
 │  ├─ region_0_XGBoost.pkl
 │  └─ region_1_RandomForest.pkl
-├─ Modelling_data/
-│  ├─ EE_S1_Exports
-│  └─ EE_S2_Exports
+├─ EE_S1_Exports
+├─ EE_S2_Exports
 ├─ Modelling_data/
 │  ├─ test_data.csv
 │  └─ train_data.csv
