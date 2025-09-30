@@ -64,14 +64,11 @@ This challenge focuses on arid and semi-arid regions, where the primary difficul
 
  4. Global Impact: Contribute to better agricultural monitoring and food security by enhancing global cropland mapping initiatives.
 
-
-## ARCHITECTURE DIAGRAM
-
 ## ETL PROCESS
 ** Assumptions**
 - Cropland exhibits distinct seasonal amplitude and timing, even when absolute greenness is modest in drylands.
 - Training and test data come from related but not identical distributions (region/seasonal shift); mitigate with region-aware validation and simple domain controls.
-- 
+  
 ### Extract
  1. Train data
 - The provided shp files were used to extract sentinel 1 and 2 data from google earth engine (s1 : COPERNICUS/S1_GRD, s2: COPERNICUS/S2_SR_HARMONIZED).
