@@ -80,8 +80,8 @@ This challenge focuses on arid and semi-arid regions, where the primary difficul
  2. Test Data
 - As the provided geolocations were masked, the test data used relied on the provided sentinel 1 and 2 data.
 
-Sentinel 1 data : focuses on radar data
-Sentinel 2 data: high spatial resolution optical mission data
+- Sentinel 1 data : focuses on radar data
+- Sentinel 2 data: high spatial resolution optical mission data
 
   ### TRANSFORMATION
   #### CLEANSING
@@ -104,7 +104,7 @@ Sentinel 2 data: high spatial resolution optical mission data
            'cloud_pct': 'median',
            'solar_azimuth': 'median',
            'solar_zenith': 'median'}
-- The aggregated s1 and s2 data are then combined for both the train and test data.
+- The aggregated s1 and s2 data were then combined for both the train and test data.
 
 #### PRE-PROCESIING
 - clip outliers using the 25 and 75 quantile values
@@ -115,7 +115,7 @@ Sentinel 2 data: high spatial resolution optical mission data
 #### FEATURE ENGINEERING
 - Develop vegetation indices (calculated using the band columns
 - Add targeted seasonal features
-- Create ratio and difference features using s1 data
+- Create ratio and difference features using S1 data
 - The data table is transformed from a long format (ID-Region-Month) to a wide format (ID-Region). Thi creates one row per ID with columns at time series monthly level
 - Indices like TVI (Triangular Vegetation Index) and TGI (Triangular Greenness Index) have wide ranges thus we clip to reduce the noise level.
 - Run a correlation check to eliminate correlation features. This reduces the dataframe size from 713 to 514
