@@ -253,5 +253,6 @@ Task : Binary classification: distinguish cropland from pasture/steppe in arid &
 -There is still an opportunity for improving the model and some way to increase its scalability would be:
    1. Running an isolation forest to identify anomalies in the dataset
    2. Regularly evaluate feature importances and monitor for degraded signal (e.g., vegetation indices underperforming during dry seasons).
--To manage the model life cycle, it would be of convenience to extract and retrain the model every quarter using the latest samples.
--All models can be saved under semantic versions (e.g., v1.1.0) with accompanying metadata (signature.json, meta.json). 
+      
+- To manage the model life cycle, it would be of convenience to extract and retrain the model every quarter using the latest samples.
+- All models can be saved under semantic versions (e.g., v1.1.0) with accompanying metadata (signature.json, meta.json). 
