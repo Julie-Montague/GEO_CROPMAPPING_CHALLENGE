@@ -2,7 +2,9 @@
 This project contains the notebooks used for the zindi crop_challenge
 
 ## REPO STRUCTURE
-\GEO_CROPMAPPING_CHALLENGE/
+
+```bash
+GEO_CROPMAPPING_CHALLENGE/
 ├─ best_models/
 │  ├─ metadata.json
 │  ├─ region_0_XGBoost.pkl
@@ -28,8 +30,8 @@ This project contains the notebooks used for the zindi crop_challenge
 ├─ ModelTuning.ipynb
 ├─ FinalSubmission.ipynb
 ├─ requirements.txt
-└─ README.md \
-
+└─ README.md
+```
 ## How to run the code
 1. Make sure to save the filed as lsited in the folder
 2. Run 'pip install -r requirements.txt'
