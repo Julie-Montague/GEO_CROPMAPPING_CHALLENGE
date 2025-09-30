@@ -1,5 +1,5 @@
 # GEO_CROPMAPPING_CHALLENGE
-This project contains the notebooks used for the zindi crop_challenge
+This project contains the notebooks used for the zindi GEOAI Challenge for Cropland Mapping in Dry Environments
 
 ## REPO STRUCTURE
 
