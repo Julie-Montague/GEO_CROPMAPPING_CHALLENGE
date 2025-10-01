@@ -54,7 +54,7 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 - Google Colab (Free version)
   
 ### NOTEBOOK RUNTIME
-   1. TrainDataretrieval.ipynb - approximately 4 hourS
+   1. TrainDataretrieval.ipynb - approximately 4 hours
    2. DataProcessing.ipynb - approximately 5 minutes
    3. ModelTuning.ipynb - approximately 50 minutes (due to hyperparameter tuning)
    4. FinalSubmission.ipynb - less than 1 minute
@@ -299,7 +299,11 @@ Task : Binary classification: distinguish cropland from pasture/steppe in arid &
    2. Regularly evaluate feature importances and monitor for degraded signal (e.g., vegetation indices underperforming during dry seasons).
       
 - To manage the model life cycle, it would be of convenience to extract and retrain the model every quarter using the latest samples.
-- All saved model folders can be saved under semantic versions using the creation time (e.g.,untuned_best_models/1759299893986/).Each folder contains :
+- All model folders can be saved under semantic versions using the creation timestamp (e.g.,untuned_best_models/1759299893986/).Each folder contains :
     1. The best pkl model file per region
     2. metadata json file
     3. submission file of the predicted output using the models
+
+ ## MODELLING LIMITATIONS
+ - Due to time complexities, catboost was not tested as it took a long time to run especially during hyperparameter tuning
+ - In addition, it would be worthwhile to try other parameter tuning techniques like grid search
