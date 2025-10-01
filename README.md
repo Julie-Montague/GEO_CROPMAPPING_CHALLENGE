@@ -261,15 +261,15 @@ Task : Binary classification: distinguish cropland from pasture/steppe in arid &
     4. XGBoost
        
   ### TRAINING PROCESS
-  - StratifiedKFold used for validation
+  - StratifiedKFold used for cross validation
   - No tuning : The data was first trained on fixed models with default parameters and the best models with the highest out-of-fold accuracy were saved
   - Hypeparameter tuning : using randomsearchCV on declared parameter spaces
   - Thresholding : default threshold at 0.5
   - evaluation metric:mean accuracy score, regional accuracy scores
-  - Model selection: pick by primary metric on OOF/val
+  - Model selection: pick by primary metric on Out-of-Fold-Accuracy
   - complexity control : selected features capped at 60
   - output feature importance visual
-  - A metadata json file is also saved shaowing the models chosen, features used, saved model path and accuracy scores
+  - A metadata json file is also saved showing the models chosen, features used, saved model path and accuracy scores
   VERSIONING : the models and metadata folder is saved using the timestamp of model run
 
 ### FINAL MODEL INFERENCE
@@ -295,7 +295,7 @@ Task : Binary classification: distinguish cropland from pasture/steppe in arid &
   
 ## MAINTENANCE,MONITORING AND LIFECYCLE MANAGEMENT:
 -There is still an opportunity for improving the model and some way to increase its scalability would be:
-   1. Running an isolation forest to identify anomalies in the dataset
+   1. Running an isolation forest to identify anomalies in the dataset(was noted to improve the model in later versions)
    2. Regularly evaluate feature importances and monitor for degraded signal (e.g., vegetation indices underperforming during dry seasons).
       
 - To manage the model life cycle, it would be of convenience to extract and retrain the model every quarter using the latest samples.
