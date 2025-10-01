@@ -45,10 +45,10 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 1. Make sure to save the files as shown above
 2. Run 'pip install -r requirements.txt'
 3. Run 'TrainDataretrieval.ipynb' to retrieve train data from google earth engine.
-5. Run 'DataProcessing' to clean,aggregate,preprocess and feature engineeer the train and test data.
+4. Run 'DataProcessing' to clean,aggregate,preprocess and feature engineeer the train and test data.
   - Inorder to achieve the current leaderboard score, this file is currently set to load the csv files in the presaved datafiles folder. The data path can however be changed to read from 'EE_Exports_S1' and 'EE_Exports_S2' to use the latest extracted data from step 3.
-6. Run 'ModelTuning' to evaluate the best models, otherwise skip this step to use pre-saved best models
-7. Run 'FinalSubmission' using the best model folder only
+5. Run 'ModelTuning' to evaluate the best models, otherwise skip this step to use pre-saved best models
+6. Run 'FinalSubmission' using the best model folder only
 
 ### Run Environemnt
 - Google Colab (Free version)
