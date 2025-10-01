@@ -288,6 +288,7 @@ Task : Binary classification: distinguish cropland from pasture/steppe in arid &
    - oof_accuracy : 0.816
    - n_sampled : 500
 - Submission file target counts : Region 0 - 396, Region 1 - 204
+- Submission ID : 8JnGXiMB
 - Public Leaderboard score : 0.883333333
 - Private Leaderboard score  0.838095238
   
