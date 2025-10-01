@@ -56,7 +56,7 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 ### NOTEBOOK RUNTIME
    1. TrainDataretrieval.ipynb - ~4 hours
    2. DataProcessing.ipynb - ~5 minutes
-   3. ModelTuning.ipynb - ~50 minutes (due to hyperparameter tuning)
+   3. ModelTuning.ipynb - ~25 minutes (due to hyperparameter tuning)
    4. FinalSubmission.ipynb - ~3 seconds
 
 ## OVERVIEW
