@@ -83,7 +83,7 @@ flowchart TD
 ```
 
 ### CODING ENVIRONMENT
-- Google Colab (Free version)
+- Google Colab (Free version) : The google drive is mounted at the start of each notebook. The main directory path is : "/content/drive/MyDrive/4th_place_GEO_AI_Cropland_Mapping_Challenge/"
   
 ### NOTEBOOK RUNTIME
    1. TrainDataretrieval.ipynb - ~4 hours
