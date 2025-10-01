@@ -273,19 +273,21 @@ Task : Binary classification: distinguish cropland from pasture/steppe in arid &
   - The submission file from the pipeline with the highest out-of-fold-accuracy(either from the no tuning stage or the tuning stage) is the submitted
 
 ### PERFORMANCE METRICS
-- Overall out-of-fold-accuracy : 86.9%
+- Overall out-of-fold-accuracy : 0.869
 - Region 0 (Fergana) :
    - best_model : 'XGBoost'
-   - cv_mean : 92.2%
-   - oof_accuracy : 92.2%
+   - cv_mean : 0.9219999999999999
+   - oof_accuracy : 0.922
    - n_sampled : 500
 - Region 1 (Orenburg) :
    - best_model : 'Random Forest'
-   - cv_mean : 81.7%
-   - oof_accuracy : 81.7%
+   - cv_mean : 0.8160000000000001
+   - oof_accuracy : 0.816
    - n_sampled : 500
-- Submission file counts : Region 0 - 396, Region 1 - 204
-- 
+- Submission file target counts : Region 0 - 396, Region 1 - 204
+- Public Leaderboard score : 0.883333333
+- Private Leaderboard score  0.838095238
+  
 ## MAINTENANCE,MONITORING AND LIFECYCLE MANAGEMENT:
 -There is still an opportunity for improving the model and some way to increase its scalability would be:
    1. Running an isolation forest to identify anomalies in the dataset
