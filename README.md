@@ -57,7 +57,7 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
    1. TrainDataretrieval.ipynb - ~4 hours
    2. DataProcessing.ipynb - ~5 minutes
    3. ModelTuning.ipynb - ~25 minutes (due to hyperparameter tuning)
-   4. FinalSubmission.ipynb - ~3 seconds
+   4. FinalSubmission.ipynb - ~10 seconds
 
 ## OVERVIEW
 Advances in machine learning and artificial intelligence offer the potential to significantly improve cropland and land cover classification by leveraging time-series satellite imagery.
