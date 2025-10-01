@@ -43,6 +43,9 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 7. Run 'FinalSubmission' using the best models only (saved in best_models folder) :
    -If you want to move new models to the best models folder, manually copy them and replace the existing files
 
+### Run Environemnt
+- Google Colab
+  
 ### NOTEBOOK RUNTIME
    1. TrainDataretrieval.ipynb - approximately 4 hourS
    2. DataProcessing.ipynb - approximately 5 minutes
@@ -293,4 +296,7 @@ Task : Binary classification: distinguish cropland from pasture/steppe in arid &
    2. Regularly evaluate feature importances and monitor for degraded signal (e.g., vegetation indices underperforming during dry seasons).
       
 - To manage the model life cycle, it would be of convenience to extract and retrain the model every quarter using the latest samples.
-- All models can be saved under semantic versions (e.g., v1.1.0) with accompanying metadata (signature.json, meta.json). 
+- All saved model folders can be saved under semantic versions using the creation time (e.g.,untuned_best_models/1759299893986/).Each folder contains :
+    1. The best pkl model file per region
+    2. metadata json file
+    3. submission file of the predicted output using the models
