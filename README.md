@@ -25,6 +25,8 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 │  ├─ Orenburg_training_samples.dbf
 │  ├─ Orenburg_training_samples.shp
 │  └─ Orenburg_training_samples.shx
+├─ untuned_best_models
+├─ tuned_best_models
 ├─ TrainDataretrieval.ipynb
 ├─ DataProcessing.ipynb
 ├─ ModelTuning.ipynb
