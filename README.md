@@ -65,6 +65,8 @@ This challenge focuses on arid and semi-arid regions, where the primary difficul
  4. Global Impact: Contribute to better agricultural monitoring and food security by enhancing global cropland mapping initiatives.
 
 ## ARCHITECTURAL DIAGRAM
+
+```mermaid
 flowchart TD
     %% Workflow for training & submission
 
@@ -96,6 +98,7 @@ flowchart TD
     %% Styling (optional)
     classDef optional fill:#fff5e6,stroke:#f0ad4e,stroke-width:1px;
     class D,E,H,I,J optional;
+```
 
 ## ETL PROCESS
 ** Assumptions**
