@@ -64,6 +64,39 @@ This challenge focuses on arid and semi-arid regions, where the primary difficul
 
  4. Global Impact: Contribute to better agricultural monitoring and food security by enhancing global cropland mapping initiatives.
 
+## ARCHITECTURAL DIAGRAM
+flowchart TD
+    %% Workflow for training & submission
+
+    A((Start)) --> B[Make sure to save the files as shown above]
+    B --> C[Run: <code>pip install -r requirements.txt</code>]
+
+    %% Optional: data retrieval
+    C --> D{Need to retrieve new train data?}
+    D -- Yes --> E[Run <code>TrainDataretrieval.ipynb</code><br/>(retrieve from Google Earth Engine)]
+    D -- No  --> F[Skip and use already saved data]
+
+    %% Processing
+    E --> G[Run <code>DataProcessing</code><br/>(clean, aggregate, preprocess, feature engineer)]
+    F --> G
+
+    %% Optional: model tuning
+    G --> H{Tune/evaluate models?}
+    H -- Yes --> I[Run <code>ModelTuning</code><br/>(select & save best models)]
+    H -- No  --> J[Skip and use pre-saved best models]
+
+    %% Best models sink
+    I --> K[(best_models/)]
+    J --> K
+
+    %% Final submission
+    K --> L[Run <code>FinalSubmission</code><br/>(uses models in <code>best_models/</code> only)]
+    L --> M((Done))
+
+    %% Styling (optional)
+    classDef optional fill:#fff5e6,stroke:#f0ad4e,stroke-width:1px;
+    class D,E,H,I,J optional;
+
 ## ETL PROCESS
 ** Assumptions**
 - Cropland exhibits distinct seasonal amplitude and timing, even when absolute greenness is modest in drylands.
