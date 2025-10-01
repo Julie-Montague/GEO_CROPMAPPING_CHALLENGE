@@ -310,4 +310,4 @@ Task : Binary classification: distinguish cropland from pasture/steppe in arid &
  - In addition, it would be worthwhile to try other parameter tuning techniques like grid search
 
    ### CAVEATS
-- Even though the currently chosen best model had the highest accuracy score amongst all the submissions made on the public leaderboard, it was noted that the score  dropped on the private leaderboard whereas other submitted versions that had lower scores on the public leaderboard performed better than the chosen submission on the private leaderboard.
+- While the currently selected model achieved our highest public leaderboard score, its score dropped on the private leaderboard. Conversely, some earlier submissions with lower public scores outperformed it on the private set. This could suggest mild overfitting to the public subset.
