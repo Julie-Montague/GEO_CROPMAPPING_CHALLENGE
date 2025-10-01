@@ -6,9 +6,13 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 ```bash
 4th_place_GEO_AI_Cropland_Mapping_Challenge/
 ├─ EE_S1_Exports/
+│  ├─ csv chunked data from sentinel 1
 ├─ EE_S2_Exports/
+│  ├─ csv chunked data from sentinel 2
 ├─ EE_exports_S1_presaved/
+│  ├─ previously extracted csv chunked data from sentinel 1
 ├─ EE_exports_S2_presaved/
+│  ├─ previously extracted csv chunked data from sentinel 2
 ├─ Modelling_data/
 │  ├─ test_data.csv
 │  └─ train_data.csv
@@ -26,7 +30,9 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 │  ├─ Orenburg_training_samples.shp
 │  └─ Orenburg_training_samples.shx
 ├─ untuned_best_models/
+│  ├─ folders containing the best models from each run of the untuned models
 ├─ tuned_best_models/
+│  ├─ folders containing the best models from each run of the tuned models
 ├─ TrainDataretrieval.ipynb
 ├─ DataProcessing.ipynb
 ├─ ModelTuning.ipynb
