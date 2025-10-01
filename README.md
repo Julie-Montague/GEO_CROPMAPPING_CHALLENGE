@@ -50,7 +50,7 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 5. Run 'ModelTuning' to evaluate the best models, otherwise skip this step to use pre-saved best models
 6. Run 'FinalSubmission' using the best model folder only
 
-### Run Environemnt
+### CODING ENVIRONMENT
 - Google Colab (Free version)
   
 ### NOTEBOOK RUNTIME
