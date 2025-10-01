@@ -308,3 +308,6 @@ Task : Binary classification: distinguish cropland from pasture/steppe in arid &
  ## MODELLING LIMITATIONS
  - Due to time complexities, catboost was not tested as it took a long time to run especially during hyperparameter tuning
  - In addition, it would be worthwhile to try other parameter tuning techniques like grid search
+
+   ### CAVEATS
+- Even though the currently chosen best model had the highest accuracy score amongst all the submissions made on the public leaderboard, it was noted that the score  dropped on the private leaderboard whereas other submitted versions that had lower scores on the public leaderboard performed better than the chosen submission on the private leaderboard.
