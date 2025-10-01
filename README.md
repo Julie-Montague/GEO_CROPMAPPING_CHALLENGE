@@ -41,7 +41,8 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 3. Run 'TrainDataretrieval.ipynb' to retrieve train data from google earth engine, otherwise skip this step to use already saved data.
 4. Run 'DataProcessing' to clean,aggregate,preprocess and feature engineeer the train and test data
 5. Run 'ModelTuning' to evaluate the best models, otherwise skip this step to use pre-saved best models
-6. Run 'FinalSubmission' using the best models only (saved in best_models folder)
+6. Run 'FinalSubmission' using the best models only (saved in best_models folder) :
+   -If you want to move new models to the best models, folder, manually copy them and replace the existing files
 
 ### NOTEBOOK RUNTIME
    1. TrainDataretrieval.ipynb - approximately 3 hourS
@@ -84,7 +85,7 @@ flowchart TD
 
     %% Optional: model tuning
     G --> H{Tune/evaluate models?}
-    H -- Yes --> I[run modeltuning file.select & save best models]
+    H -- Yes --> I[run modeltuning file.choose the models that give the highest oof accuracy.if the oof accuracy is higher than for the pre-saved mddels, manually move the models and consequent json metadata file to the best models folder (Remember to change the model path in the json metadata file once moved]
     H -- No  --> J[Skip and use pre-saved best models]
 
     %% Best models sink
