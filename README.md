@@ -48,7 +48,7 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 4. Run 'DataProcessing' to clean,aggregate,preprocess and feature engineeer the train and test data.
   - Inorder to achieve the current leaderboard score, this file is currently set to load the csv files in the presaved datafiles folder. The data path can however be changed to read from 'EE_Exports_S1' and 'EE_Exports_S2' to use the latest extracted data from step 3.
 5. Run 'ModelTuning' to evaluate the best models, otherwise skip this step to use pre-saved best models
-6. Run 'FinalSubmission' using the best model folder only
+6. Run 'FinalSubmission' using the best model folder path.
 
 ## ARCHITECTURAL DIAGRAM
 
@@ -56,7 +56,7 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 flowchart TD
     %% Workflow for training & submission
 
-    A((Start)) --> B[Make sure to save the files as shown above]
+    A((Start)) --> B[Make sure to save the files as shown in the repo structure section]
     B --> C[pip install -r requirements.txt]
 
     %% Optional: data retrieval
