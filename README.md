@@ -296,7 +296,8 @@ Task : Binary classification: distinguish cropland from pasture/steppe in arid &
 ## MAINTENANCE,MONITORING AND LIFECYCLE MANAGEMENT:
 -There is still an opportunity for improving the model and some way to increase its scalability would be:
    1. Running an isolation forest to identify anomalies in the dataset(was noted to improve the model in later versions)
-   2. Regularly evaluate feature importances and monitor for degraded signal (e.g., vegetation indices underperforming during dry seasons).
+   2. Increasing the number of features to be used during modelling (Increasing from k=60 to k=110 improved later versions of the model)
+   3. Regularly evaluate feature importances and monitor for degraded signal (e.g., vegetation indices underperforming during dry seasons).
       
 - To manage the model life cycle, it would be of convenience to extract and retrain the model every quarter using the latest samples.
 - All model folders can be saved under semantic versions using the creation timestamp (e.g.,untuned_best_models/1759299893986/).Each folder contains :
