@@ -5,12 +5,10 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 
 ```bash
 4th_place_GEO_AI_Cropland_Mapping_Challenge/
-├─ best_models/
-│  ├─ metadata.json
-│  ├─ region_0_XGBoost.pkl
-│  └─ region_1_RandomForest.pkl
 ├─ EE_S1_Exports
 ├─ EE_S2_Exports
+├─ EE_exports_S1_presaved
+├─ EE_exports_S2_presaved
 ├─ Modelling_data/
 │  ├─ test_data.csv
 │  └─ train_data.csv
@@ -38,11 +36,12 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 ## HOW TO RUN THE CODE
 1. Make sure to save the files as shown above
 2. Run 'pip install -r requirements.txt'
-3. Run 'TrainDataretrieval.ipynb' to retrieve train data from google earth engine, otherwise skip this step to use already saved data.
-4. Run 'DataProcessing' to clean,aggregate,preprocess and feature engineeer the train and test data
-5. Run 'ModelTuning' to evaluate the best models, otherwise skip this step to use pre-saved best models
-6. Run 'FinalSubmission' using the best models only (saved in best_models folder) :
-   -If you want to move new models to the best models, folder, manually copy them and replace the existing files
+3. Run 'TrainDataretrieval.ipynb' to retrieve train data from google earth engine.
+5. Run 'DataProcessing' to clean,aggregate,preprocess and feature engineeer the train and test data.
+  - Inorder to achieve the current leaderboard score, this file is currently set to load the csv files in the presaved datafiles folder. The data path can however be changed to read from 'EE_Exports_S1' and 'EE_Exports_S2' to use the latest extracted data from step 3.
+6. Run 'ModelTuning' to evaluate the best models, otherwise skip this step to use pre-saved best models
+7. Run 'FinalSubmission' using the best models only (saved in best_models folder) :
+   -If you want to move new models to the best models folder, manually copy them and replace the existing files
 
 ### NOTEBOOK RUNTIME
    1. TrainDataretrieval.ipynb - approximately 4 hourS
@@ -85,7 +84,7 @@ flowchart TD
 
     %% Optional: model tuning
     G --> H{Tune/evaluate models?}
-    H -- Yes --> I[run modeltuning file.choose the models that give the highest oof accuracy.if the oof accuracy is higher than for the pre-saved mddels, manually move the models and consequent json metadata file to the best models folder : Remember to change the model path in the json metadata file once moved]
+    H -- Yes --> I[run modeltuning file.choose the models that give the highest oof accuracy.if the oof accuracy is higher than for the previusly chosen best model's accuracy, the model path in the FinalSubmission notebook to reference the new models, 
     H -- No  --> J[Skip and use pre-saved best models]
 
     %% Best models sink
@@ -239,7 +238,7 @@ flowchart TD
 ### LOAD
 The final datasets are saved as csv files :
  1. train_data.csv
- 2. test_data,csv
+ 2. test_data.csv
 
 ## DATA MODELLING
 Task : Binary classification: distinguish cropland from pasture/steppe in arid & semi-arid settings.
