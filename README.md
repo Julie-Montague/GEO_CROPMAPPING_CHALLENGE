@@ -85,7 +85,7 @@ flowchart TD
 
     %% Optional: model tuning
     G --> H{Tune/evaluate models?}
-    H -- Yes --> I[run modeltuning file.choose the models that give the highest oof accuracy.if the oof accuracy is higher than for the pre-saved mddels, manually move the models and consequent json metadata file to the best models folder (Remember to change the model path in the json metadata file once moved]
+    H -- Yes --> I[run modeltuning file.choose the models that give the highest oof accuracy.if the oof accuracy is higher than for the pre-saved mddels, manually move the models and consequent json metadata file to the best models folder : Remember to change the model path in the json metadata file once moved]
     H -- No  --> J[Skip and use pre-saved best models]
 
     %% Best models sink
