@@ -87,16 +87,12 @@ flowchart TD
 
     %% Optional: model tuning
     G --> H{Tune/evaluate models?}
-    H -- Yes --> I[run modeltuning file.choose the models that give the highest oof accuracy.if the oof accuracy is higher than for the previusly chosen best model's accuracy, the model path in the FinalSubmission notebook to reference the new models, 
+    H -- Yes --> I[run modeltuning file.choose the models that give the highest oof accuracy.if the oof accuracy is higher than for the previusly chosen best model's accuracy, change the model path in the FinalSubmission notebook to reference the new models, 
     H -- No  --> J[Skip and use pre-saved best models]
 
-    %% Best models sink
-    I --> K[(best_models/)]
-    J --> K
-
     %% Final submission
-    K --> L[uses models in best_models folder]
-    L --> M((Done))
+    I --> J[uses models in best_models folder]
+    K --> K((Done))
 
     %% Styling (optional)
     classDef optional fill:#fff5e6,stroke:#f0ad4e,stroke-width:1px;
