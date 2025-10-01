@@ -81,7 +81,7 @@ flowchart TD
     %% Workflow for training & submission
 
     A((Start)) --> B[Make sure to save the files as shown above]
-    B --> C[pip install -r requirements.txt</code>]
+    B --> C[pip install -r requirements.txt]
 
     %% Optional: data retrieval
     C --> D{Need to retrieve new train data?}
@@ -98,7 +98,7 @@ flowchart TD
     H -- No  --> J[Skip and use pre-saved best models]
 
     %% Final submission
-    I --> J[uses models in best_models folder]
+    I --> J
     K --> K((Done))
 
     %% Styling (optional)
