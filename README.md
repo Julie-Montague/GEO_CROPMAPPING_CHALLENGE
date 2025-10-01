@@ -71,20 +71,20 @@ flowchart TD
     %% Workflow for training & submission
 
     A((Start)) --> B[Make sure to save the files as shown above]
-    B --> C[Run: <code>pip install -r requirements.txt</code>]
+    B --> C[pip install -r requirements.txt</code>]
 
     %% Optional: data retrieval
     C --> D{Need to retrieve new train data?}
-    D -- Yes --> E[Run <code>TrainDataretrieval.ipynb</code><br/>(retrieve from Google Earth Engine)]
+    D -- Yes --> E[retrieve from Google Earth Engine]
     D -- No  --> F[Skip and use already saved data]
 
     %% Processing
-    E --> G[Run <code>DataProcessing</code><br/>(clean, aggregate, preprocess, feature engineer)]
+    E --> G[clean, aggregate, preprocess, feature engineer]
     F --> G
 
     %% Optional: model tuning
     G --> H{Tune/evaluate models?}
-    H -- Yes --> I[Run <code>ModelTuning</code><br/>(select & save best models)]
+    H -- Yes --> I[run modeltuning file.select & save best models]
     H -- No  --> J[Skip and use pre-saved best models]
 
     %% Best models sink
@@ -92,7 +92,7 @@ flowchart TD
     J --> K
 
     %% Final submission
-    K --> L[Run <code>FinalSubmission</code><br/>(uses models in <code>best_models/</code> only)]
+    K --> L[uses models in best_models folder]
     L --> M((Done))
 
     %% Styling (optional)
