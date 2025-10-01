@@ -99,7 +99,7 @@ flowchart TD
 
     %% Final submission
     I --> J
-    K --> K((Done))
+    J --> K((Done))
 
     %% Styling (optional)
     classDef optional fill:#fff5e6,stroke:#f0ad4e,stroke-width:1px;
