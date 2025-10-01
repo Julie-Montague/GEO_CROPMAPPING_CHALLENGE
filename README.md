@@ -52,7 +52,7 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
    -If you want to move new models to the best models folder, manually copy them and replace the existing files
 
 ### Run Environemnt
-- Google Colab
+- Google Colab (Free version)
   
 ### NOTEBOOK RUNTIME
    1. TrainDataretrieval.ipynb - approximately 4 hourS
