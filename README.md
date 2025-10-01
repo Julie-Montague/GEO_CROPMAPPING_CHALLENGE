@@ -85,16 +85,16 @@ flowchart TD
 
     %% Optional: data retrieval
     C --> D{Need to retrieve new train data?}
-    D -- Yes --> E[retrieve from Google Earth Engine]
+    D -- Yes --> E[TrainDataretreival.ipynb : Retrieve from Google Earth Engine ]
     D -- No  --> F[Skip and use already saved data]
 
     %% Processing
-    E --> G[clean, aggregate, preprocess, feature engineer]
+    E --> G[DataProcessing.ipynb : Clean, Aggregate, Preprocess, Feature engineer]
     F --> G
 
     %% Optional: model tuning
     G --> H{Tune/evaluate models?}
-    H -- Yes --> I[run Modeltuning file.The models with the best accuracy will be saved.if the oof accuracy is higher than for the previously chosen best model's accuracy, change the model path in the FinalSubmission notebook to reference the new models]
+    H -- Yes --> I[Run Modeltuning.ipynb.The models with the best accuracy will be saved.if the oof accuracy is higher than for the previously chosen best model's accuracy, change the model path in the FinalSubmission notebook to reference the new models]
     H -- No  --> J[Skip and use pre-saved best models]
 
     %% Final submission
