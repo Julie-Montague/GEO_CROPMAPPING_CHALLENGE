@@ -1,0 +1,14 @@
+earthengine_api==1.5.24
+geemap==0.35.3
+geopandas==1.1.1
+imbalanced_learn==0.14.0
+imblearn==0.0
+joblib==1.5.2
+lightgbm==4.6.0
+matplotlib==3.10.6
+numpy==2.3.3
+pandas==2.3.3
+protobuf==6.32.1
+scikit_learn==1.7.2
+seaborn==0.13.2
+xgboost==3.0.5

@@ -4,7 +4,7 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 ## REPO STRUCTURE
 
 ```bash
-4th_place_GEO_AI_Cropland_Mapping_Challenge/
+GEO_AI_Cropland_Mapping_Challenge/
 ├─ EE_S1_Exports/
 │  ├─ csv chunked data from sentinel 1
 ├─ EE_S2_Exports/
@@ -83,7 +83,7 @@ flowchart TD
 ```
 
 ### CODING ENVIRONMENT
-- Google Colab (Free version) : The google drive is mounted at the start of each notebook. The main directory path is : "/content/drive/MyDrive/4th_place_GEO_AI_Cropland_Mapping_Challenge/"
+- Google Colab (Free version) : The google drive is mounted at the start of each notebook. The main directory path is : "/content/drive/MyDrive/GEO_AI_Cropland_Mapping_Challenge/"
   
 ### NOTEBOOK RUNTIME
    1. TrainDataretrieval.ipynb - ~4 hours
