@@ -98,7 +98,7 @@ flowchart LR
     J --> K((Done))
 
     %% Styling (optional)
-    classDef optional fill:#fff5e6,stroke:#f0ad4e,stroke-width:1px;
+    classDef optional fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000;
     class D,E,H,I,J optional;
 ```
 
