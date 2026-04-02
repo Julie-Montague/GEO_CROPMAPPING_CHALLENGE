@@ -1,4 +1,4 @@
-# GEOAI Challenge for Cropland Mapping in Dry Environments
+# GeoAI Challenge for Cropland Mapping in Dry Environments
 Competition link : https://zindi.africa/competitions/geoai-challenge-for-cropland-mapping-in-dry-environments
 
 ## PROJECT OVERVIEW
