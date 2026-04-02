@@ -6,7 +6,7 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 The project focuses on:
 - Remote sensing data collection using Google Earth Engine
 - Preprocessing large-scale geospatial datasets
-- Building ML models for crop classification
+- Building ML models for cropland classification
 
 ## DATA COLLECTION
 - Data collected using **Google Earth Engine API**
