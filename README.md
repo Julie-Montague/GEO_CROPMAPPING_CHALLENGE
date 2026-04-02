@@ -15,7 +15,7 @@ The project focuses on:
     - Sentinel 2 : https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED
 - Processed raw satellite data into structured tabular features
 
-## ⚙️ Tech Stack
+## TECH STACH
 - Python (pandas, numpy, sklearn)
 - Google Earth Engine
 - ML models : Logistic Regression, RandomForest, LightGBM, XGBoost
