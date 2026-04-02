@@ -1,7 +1,25 @@
 # GEOAI CHALLENGE FOR CROPLAND MAPPING IN DRY ENVIRONMENTS
-This project contains the notebooks used for the zindi GEOAI Challenge for Cropland Mapping in Dry Environments.
-
 Competition link : https://zindi.africa/competitions/geoai-challenge-for-cropland-mapping-in-dry-environments
+
+## PROJECT OVERVIEW
+This project contains the notebooks used for the zindi GEOAI Challenge for Cropland Mapping in Dry Environments.
+The project focuses on:
+- Remote sensing data collection using Google Earth Engine
+- Preprocessing large-scale geospatial datasets
+- Building ML models for crop classification
+
+## DATA COLLECTION
+- Data collected using **Google Earth Engine API**
+- Source: Sentinel satellite imagery :
+    - Sentinel 1 : https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S1_GRD
+    - Sentinel 2 : https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED
+- Processed raw satellite data into structured tabular features
+
+## ⚙️ Tech Stack
+- Python (pandas, numpy, sklearn)
+- Google Earth Engine
+- ML models : Logistic Regression, RandomForest, LightGBM, XGBoost
+---
 
 ## REPO STRUCTURE
 
@@ -259,7 +277,7 @@ Task : Binary classification: distinguish cropland from pasture/steppe in arid &
 - Models used (at random state 42):
     1. Random forest
     2. Logistic Regression
-    3. LighGBM
+    3. LightGBM
     4. XGBoost
        
   ### TRAINING PROCESS
