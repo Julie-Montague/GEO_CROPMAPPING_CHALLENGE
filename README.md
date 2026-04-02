@@ -24,9 +24,10 @@ The project focuses on:
 - Successfully transformed raw satellite data into usable ML features
 - Built predictive models for crop classification
 - Demonstrated end-to-end data pipeline capability
-
+- 
 ## Reproducibility
 All steps from data extraction to modeling are included in this repository.
+
 ---
 
 ## REPO STRUCTURE
