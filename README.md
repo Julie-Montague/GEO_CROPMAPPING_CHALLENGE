@@ -15,8 +15,8 @@ The training data retrieval process is implemented in ![Data retrieval](https://
 
 Satellite imagery was retrieved using the **Google Earth Engine API** from the following Google Earth Engine collections:
 
-- **Sentinel-1 SAR imagery**: `COPERNICUS/S1_GRD`
-- **Sentinel-2 surface reflectance imagery**: `COPERNICUS/S2_SR_HARMONIZED`
+- **Sentinel-1 SAR imagery**: ![COPERNICUS/S1_GRD](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S1_GRD)
+- **Sentinel-2 surface reflectance imagery**: ![COPERNICUS/S2_SR_HARMONIZED](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED)
 
 ### Data Retrieval Process
 
