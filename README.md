@@ -1,12 +1,26 @@
 # GeoAI Challenge for Cropland Mapping in Dry Environments
+This project contains the notebooks used for the zindi GEOAI Challenge for Cropland Mapping in Dry Environments.
 Competition link : https://zindi.africa/competitions/geoai-challenge-for-cropland-mapping-in-dry-environments
 
 ## Project Overview
-This project contains the notebooks used for the zindi GEOAI Challenge for Cropland Mapping in Dry Environments.
+Advances in machine learning and artificial intelligence offer the potential to significantly improve cropland and land cover classification by leveraging time-series satellite imagery.
+This challenge focuses on arid and semi-arid regions, where the primary difficulty lies in distinguishing cropland from pastures and steppe land. Participants are tasked with designing and evaluating methods for cropland mapping in two test regions:
+   -Fergana, Uzbekistan – a densely cultivated region with complex irrigation patterns.
+   -Orenburg, Russia – a semi-arid landscape where cropland is interspersed with steppe and pasture.
+   
 The project focuses on:
 - Remote sensing data collection using Google Earth Engine
 - Preprocessing large-scale geospatial datasets
 - Building ML models for cropland classification
+
+## OBJECTIVES
+ 1. Accuracy: Develop robust models that improve cropland classification compared to existing global products.
+
+ 2. Cost-effectiveness: Design methods that balance performance with computational efficiency and scalability.
+
+ 3. Regional Adaptability: Tackle the unique challenges of arid and semi-arid landscapes where cropland is hard to distinguish from pastures and steppe.
+
+ 4. Global Impact: Contribute to better agricultural monitoring and food security by enhancing global cropland mapping initiatives.
 
 ## Tech Stack
 - Python (pandas, numpy, sklearn)
@@ -49,7 +63,7 @@ The retrieved Sentinel-1 and Sentinel-2 data was exported as structured CSV file
 
 ---
 
-## REPO STRUCTURE
+## REPOSITORY STRUCTURE
 
 ```bash
 GEO_AI_Cropland_Mapping_Challenge/
@@ -138,21 +152,6 @@ flowchart LR
    2. DataProcessing.ipynb - ~5 minutes
    3. ModelTuning.ipynb - ~25 minutes (due to hyperparameter tuning)
    4. FinalSubmission.ipynb - ~10 seconds
-
-## OVERVIEW
-Advances in machine learning and artificial intelligence offer the potential to significantly improve cropland and land cover classification by leveraging time-series satellite imagery.
-This challenge focuses on arid and semi-arid regions, where the primary difficulty lies in distinguishing cropland from pastures and steppe land. Participants are tasked with designing and evaluating methods for cropland mapping in two test regions:
-   -Fergana, Uzbekistan – a densely cultivated region with complex irrigation patterns.
-   -Orenburg, Russia – a semi-arid landscape where cropland is interspersed with steppe and pasture.
-
-## OBJECTIVES
- 1. Accuracy: Develop robust models that improve cropland classification compared to existing global products.
-
- 2. Cost-effectiveness: Design methods that balance performance with computational efficiency and scalability.
-
- 3. Regional Adaptability: Tackle the unique challenges of arid and semi-arid landscapes where cropland is hard to distinguish from pastures and steppe.
-
- 4. Global Impact: Contribute to better agricultural monitoring and food security by enhancing global cropland mapping initiatives.
 
 ## ETL PROCESS
 ** Assumptions**
