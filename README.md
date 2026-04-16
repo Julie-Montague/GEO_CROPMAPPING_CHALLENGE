@@ -160,12 +160,12 @@ flowchart LR
 - Training and test data come from related but not identical distributions (region/seasonal shift); mitigate with region-aware validation and simple domain controls.
   
 ### 1. EXTRACT
- 1. Train data
+ #### 1.1 TRAIN DATA
 - The provided shp files were used to extract sentinel 1 and 2 data from google earth engine (s1 : COPERNICUS/S1_GRD, s2: COPERNICUS/S2_SR_HARMONIZED).
 - The train data was extracted using the dates available on the test data
 - Due to memory limitations, the data was retrieved in chunks and the netebook saves the files directly to google drive
 
- 2. Test Data
+ #### 1.2 TEST DATA
 - As the provided geolocations were masked, the test data used relied on the provided sentinel 1 and 2 data.
 
 - Data Description :
