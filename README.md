@@ -8,6 +8,11 @@ The project focuses on:
 - Preprocessing large-scale geospatial datasets
 - Building ML models for cropland classification
 
+## Tech Stack
+- Python (pandas, numpy, sklearn)
+- Google Earth Engine
+- ML models : Logistic Regression, RandomForest, LightGBM, XGBoost
+
 ## Data Collection
 The training data retrieval process is implemented in ![Data retrieval](https://github.com/Julie-Montague/GEO_CROPMAPPING_CHALLENGE/blob/main/TrainDataretrieval.ipynb).
 
@@ -38,19 +43,6 @@ The data collection workflow included:
 ### Output
 
 The retrieved Sentinel-1 and Sentinel-2 data were exported as structured CSV files and later used in the data processing and modelling pipeline. This step transformed raw satellite imagery into tabular features suitable for cropland classification.
-
-## Tech Stack
-- Python (pandas, numpy, sklearn)
-- Google Earth Engine
-- ML models : Logistic Regression, RandomForest, LightGBM, XGBoost
-
-## Results
-- Successfully transformed raw satellite data into usable ML features
-- Built predictive models for crop classification
-- Demonstrated end-to-end data pipeline capability
-- 
-## Reproducibility
-All steps from data extraction to modeling are included in this repository.
 
 ---
 
