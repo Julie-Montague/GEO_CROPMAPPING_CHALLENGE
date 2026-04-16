@@ -9,11 +9,35 @@ The project focuses on:
 - Building ML models for cropland classification
 
 ## Data Collection
-- Data collected using **Google Earth Engine API**
-- Source: Sentinel satellite imagery :
-    - Sentinel 1 : https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S1_GRD
-    - Sentinel 2 : https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED
-- Processed raw satellite data into structured tabular features
+The training data retrieval process is implemented in `TrainDataretrieval.ipynb`.
+
+### Data Sources
+
+Satellite imagery was retrieved using the **Google Earth Engine API** from the following Google Earth Engine collections:
+
+- **Sentinel-1 SAR imagery**: `COPERNICUS/S1_GRD`
+- **Sentinel-2 surface reflectance imagery**: `COPERNICUS/S2_SR_HARMONIZED`
+
+### Data Retrieval Process
+
+The data collection workflow included:
+
+- Authenticating and initializing access to Google Earth Engine.
+- Loading training sample shapefiles for the study regions.
+- Converting geospatial training points into Earth Engine `FeatureCollection` objects.
+- Using the provided test dates to retrieve matching Sentinel-1 and Sentinel-2 observations.
+- Filtering Sentinel-1 imagery by study area, date window, orbit direction, instrument mode, polarization, and relative orbit number.
+- Retrieving Sentinel-1 radar backscatter features, including `VV` and `VH`.
+- Filtering Sentinel-2 imagery by study area and date window.
+- Applying cloud masking to Sentinel-2 imagery using the `QA60` cloud/cirrus band.
+- Extracting Sentinel-2 spectral bands such as `B2`, `B3`, `B4`, `B8`, `B8A`, `B11`, and `B12`.
+- Extracting metadata features such as cloud percentage, solar azimuth, and solar zenith.
+- Sampling satellite values at the training point locations using Earth Engine.
+- Exporting the retrieved data in chunks as CSV files to Google Drive to manage memory limitations.
+
+### Output
+
+The retrieved Sentinel-1 and Sentinel-2 data were exported as structured CSV files and later used in the data processing and modelling pipeline. This step transformed raw satellite imagery into tabular features suitable for cropland classification.
 
 ## Tech Stack
 - Python (pandas, numpy, sklearn)
