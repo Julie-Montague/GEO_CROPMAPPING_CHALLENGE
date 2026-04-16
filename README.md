@@ -40,17 +40,12 @@ The data collection workflow included:
 - Sampling satellite values at the training point locations using Earth Engine.
 - Exporting the retrieved data in chunks as CSV files to Google Drive to manage memory limitations.
 
-Some values in `TrainDataretrieval.ipynb`, such as the Google Earth Engine project name, are user-specific and must be configured before running the notebook.
-
-For example, when initializing Google Earth Engine, users should replace the placeholder project name with their own Google Cloud / Earth Engine project ID:
+The Google Earth Engine project name is user-specific and must be configured before running the notebook. Replace the placeholder project name with your own Google Cloud / Earth Engine project ID:
 
 ```python
 ee.Initialize(project="your-google-earth-engine-project-id")
 ```
-
-### Output
-
-The retrieved Sentinel-1 and Sentinel-2 data were exported as structured CSV files and later used in the data processing and modelling pipeline. This step transformed raw satellite imagery into tabular features suitable for cropland classification.
+The retrieved Sentinel-1 and Sentinel-2 data was exported as structured CSV files and later used in the data processing and modelling pipeline. This step transformed raw satellite imagery into tabular features suitable for cropland classification.
 
 ---
 
