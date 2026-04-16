@@ -159,7 +159,7 @@ flowchart LR
 - Cropland exhibits distinct seasonal amplitude and timing, even when absolute greenness is modest in drylands.
 - Training and test data come from related but not identical distributions (region/seasonal shift); mitigate with region-aware validation and simple domain controls.
   
-### EXTRACT
+### 1. EXTRACT
  1. Train data
 - The provided shp files were used to extract sentinel 1 and 2 data from google earth engine (s1 : COPERNICUS/S1_GRD, s2: COPERNICUS/S2_SR_HARMONIZED).
 - The train data was extracted using the dates available on the test data
@@ -172,12 +172,12 @@ flowchart LR
    - Sentinel 1 data : focuses on radar data
    - Sentinel 2 data: high spatial resolution optical mission data
 
-### TRANSFORMATION
-  #### CLEANSING
+### 2. TRANSFORMATION
+  #### 2.1 CLEANSING
   - Drop duplicates
   - Drop coordinate columns as these columns are masked on the test data thus may not bave relevant modelling information
     
-  #### AGGREGATION
+  #### 2.2 AGGREGATION
    - s1_columns : `[['VH', 'VV','orbit', 'polarization', 'rel_orbit', 'region', 'month']`
    - s2_columns :
      i.) band_cols = `['B11','B12','B2','B3','B4','B5','B6','B7','B8','B8A']`
@@ -195,13 +195,13 @@ flowchart LR
            'solar_zenith': 'median'}`
    - The aggregated s1 and s2 data were then combined for both the train and test data.
 
-   #### PRE-PROCESSING
+   #### 2.3 PRE-PROCESSING
    - clip outliers using the 25 and 75 quantile values
    - Apply quantile mapping to reduce covariate shift between the train and test data
    - Apply robust scaling
    - Encode region column
 
-   #### FEATURE ENGINEERING
+   #### 2.4 FEATURE ENGINEERING
    - Develop vegetation indices (calculated using the band columns)
    - Add targeted seasonal features
    - Create ratio and difference features using S1 data
@@ -209,7 +209,7 @@ flowchart LR
    - Indices like TVI (Triangular Vegetation Index) and TGI (Triangular Greenness Index) have wide ranges thus we clip to reduce the noise level.
    - Run a correlation check to eliminate correlation features. This reduces the dataframe size from 713 to 514
   
-   #### FEATURE LIST
+   #### 2.5 FEATURE LIST
    - 'ID' : Unique identifier
    - 'region' : The region for the data point ( Fergana or Orenburg)
    - 'month' : Month of the year for the specific data point
@@ -289,7 +289,7 @@ flowchart LR
      - 'NPCRI' : Proxy for chlorophyll/carotenoid ratio; higher = more carotenoids or senescence
      - 'TCARI': Refines chlorophyll detection, reducing background/LAI effects
     
-### LOAD
+### 3. LOAD
 The final datasets are saved as csv files :
  1. train_data.csv
  2. test_data.csv
