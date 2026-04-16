@@ -9,7 +9,7 @@ The project focuses on:
 - Building ML models for cropland classification
 
 ## Data Collection
-The training data retrieval process is implemented in `TrainDataretrieval.ipynb`.
+The training data retrieval process is implemented in ![Data retrieval](https://github.com/Julie-Montague/GEO_CROPMAPPING_CHALLENGE/blob/main/TrainDataretrieval.ipynb).
 
 ### Data Sources
 
