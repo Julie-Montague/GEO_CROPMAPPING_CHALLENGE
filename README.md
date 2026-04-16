@@ -3,7 +3,7 @@ This project contains the notebooks used for the zindi GEOAI Challenge for Cropl
 
 Competition link : https://zindi.africa/competitions/geoai-challenge-for-cropland-mapping-in-dry-environments
 
-## Project Overview
+## PROJECT OVERVIEW
 Advances in machine learning and artificial intelligence offer the potential to significantly improve cropland and land cover classification by leveraging time-series satellite imagery.
 This challenge focuses on arid and semi-arid regions, where the primary difficulty lies in distinguishing cropland from pastures and steppe land. Participants are tasked with designing and evaluating methods for cropland mapping in two test regions:
    - Fergana, Uzbekistan – a densely cultivated region with complex irrigation patterns.
@@ -23,22 +23,22 @@ The project focuses on:
 
  4. Global Impact: Contribute to better agricultural monitoring and food security by enhancing global cropland mapping initiatives.
 
-## Tech Stack
+## TECH STACK
 - Python (pandas, numpy, sklearn)
 - Open API Usage : Google Earth Engine
 - ML models : Logistic Regression, RandomForest, LightGBM, XGBoost
 
-## Data Collection
+## DATA COLLECTION
 The training data retrieval process is implemented in ![Data retrieval](https://github.com/Julie-Montague/GEO_CROPMAPPING_CHALLENGE/blob/main/TrainDataretrieval.ipynb).
 
-### Data Sources
+### DATA SOURCES
 
 Satellite imagery was retrieved using the **Google Earth Engine API** from the following Google Earth Engine collections:
 
 - **Sentinel-1 SAR imagery**: `COPERNICUS/S1_GRD` - https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S1_GRD
 - **Sentinel-2 surface reflectance imagery**: `COPERNICUS/S2_SR_HARMONIZED` - https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED
 
-### Data Retrieval Process
+### DATA RETRIEVAL PROCESS
 
 The data collection workflow included:
 
