@@ -180,21 +180,20 @@ flowchart LR
   #### AGGREGATION
    - s1_columns : `[['VH', 'VV','orbit', 'polarization', 'rel_orbit', 'region', 'month']`
    - s2_columns :
-        i.) band_cols = `['B11','B12','B2','B3','B4','B5','B6','B7','B8','B8A']`
-        ii.) meta_cols = `['cloud_pct','solar_azimuth','solar_zenith']`
-     
-  - The extracted and provided data was at a daily granular level. This was aggregated to ID-Region-Month level.
-  - For S1 data, the following aggregations were taken :
+     i.) band_cols = `['B11','B12','B2','B3','B4','B5','B6','B7','B8','B8A']`
+     ii.) meta_cols = `['cloud_pct','solar_azimuth','solar_zenith']`
+   - The extracted and provided data was at a daily granular level. This was aggregated to ID-Region-Month level.
+   - For S1 data, the following aggregations were taken :
         - `{'VH':'mean','VV':'mean',
             'orbit':lambda x: x.mode()[0],
             'polarization': lambda x: x.mode()[0],
             'rel_orbit': lambda x: x.mode()[0]}}`
-  - S2 data was aggregated as follows:
+   - S2 data was aggregated as follows:
         -`{**{b: 'median' for b in band_cols},
            'cloud_pct': 'median',
            'solar_azimuth': 'median',
            'solar_zenith': 'median'}`
-- The aggregated s1 and s2 data were then combined for both the train and test data.
+   - The aggregated s1 and s2 data were then combined for both the train and test data.
 
    #### PRE-PROCESSING
    - clip outliers using the 25 and 75 quantile values
