@@ -6,8 +6,8 @@ Competition link : https://zindi.africa/competitions/geoai-challenge-for-croplan
 ## Project Overview
 Advances in machine learning and artificial intelligence offer the potential to significantly improve cropland and land cover classification by leveraging time-series satellite imagery.
 This challenge focuses on arid and semi-arid regions, where the primary difficulty lies in distinguishing cropland from pastures and steppe land. Participants are tasked with designing and evaluating methods for cropland mapping in two test regions:
-   -Fergana, Uzbekistan – a densely cultivated region with complex irrigation patterns.
-   -Orenburg, Russia – a semi-arid landscape where cropland is interspersed with steppe and pasture.
+   - Fergana, Uzbekistan – a densely cultivated region with complex irrigation patterns.
+   - Orenburg, Russia – a semi-arid landscape where cropland is interspersed with steppe and pasture.
    
 The project focuses on:
 - Remote sensing data collection using Google Earth Engine
