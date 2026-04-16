@@ -10,7 +10,7 @@ The project focuses on:
 
 ## Tech Stack
 - Python (pandas, numpy, sklearn)
-- Google Earth Engine
+- Open API Usage : Google Earth Engine
 - ML models : Logistic Regression, RandomForest, LightGBM, XGBoost
 
 ## Data Collection
