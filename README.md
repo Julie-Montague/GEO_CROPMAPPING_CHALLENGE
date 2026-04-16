@@ -180,8 +180,8 @@ flowchart LR
   #### 2.2 AGGREGATION
    - s1_columns : `[['VH', 'VV','orbit', 'polarization', 'rel_orbit', 'region', 'month']`
    - s2_columns :
-     i.) band_cols = `['B11','B12','B2','B3','B4','B5','B6','B7','B8','B8A']`
-     ii.) meta_cols = `['cloud_pct','solar_azimuth','solar_zenith']`
+        i.) band_cols = `['B11','B12','B2','B3','B4','B5','B6','B7','B8','B8A']`
+        ii.) meta_cols = `['cloud_pct','solar_azimuth','solar_zenith']`
    - The extracted and provided data was at a daily granular level. This was aggregated to ID-Region-Month level.
    - For S1 data, the following aggregations were taken :
         - `{'VH':'mean','VV':'mean',
