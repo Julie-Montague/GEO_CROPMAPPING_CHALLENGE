@@ -1,5 +1,6 @@
 # GeoAI Challenge for Cropland Mapping in Dry Environments
 This project contains the notebooks used for the zindi GEOAI Challenge for Cropland Mapping in Dry Environments.
+
 Competition link : https://zindi.africa/competitions/geoai-challenge-for-cropland-mapping-in-dry-environments
 
 ## Project Overview
