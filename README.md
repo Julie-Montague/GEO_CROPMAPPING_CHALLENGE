@@ -161,7 +161,7 @@ flowchart LR
   
 ### 1. EXTRACT
  #### 1.1 TRAIN DATA
-- The provided shp files were used to extract sentinel 1 and 2 data from google earth engine (s1 : COPERNICUS/S1_GRD, s2: COPERNICUS/S2_SR_HARMONIZED).
+- The provided shp files were used to extract sentinel 1 and 2 data from google earth engine (s1 : `COPERNICUS/S1_GRD`, s2: `COPERNICUS/S2_SR_HARMONIZED`).
 - The train data was extracted using the dates available on the test data
 - Due to memory limitations, the data was retrieved in chunks and the netebook saves the files directly to google drive
 
@@ -175,7 +175,7 @@ flowchart LR
 ### 2. TRANSFORMATION
   #### 2.1 CLEANSING
   - Drop duplicates
-  - Drop coordinate columns as these columns are masked on the test data thus may not bave relevant modelling information
+  - Drop coordinate columns as these columns are masked on the test data thus may not have relevant modelling information
     
   #### 2.2 AGGREGATION
    - s1_columns : `[['VH', 'VV','orbit', 'polarization', 'rel_orbit', 'region', 'month']`
