@@ -161,7 +161,7 @@ flowchart LR
   
 ### 1. EXTRACT
  #### 1.1 TRAIN DATA
-- The provided shp files were used to extract sentinel 1 and 2 data from google earth engine (s1 : `COPERNICUS/S1_GRD`, s2: `COPERNICUS/S2_SR_HARMONIZED`).
+- The provided shp files were used to extract sentinel 1 and 2 data from google earth engine (S1 : `COPERNICUS/S1_GRD`, S2: `COPERNICUS/S2_SR_HARMONIZED`).
 - The train data was extracted using the dates available on the test data
 - Due to memory limitations, the data was retrieved in chunks and the netebook saves the files directly to google drive
 
@@ -189,7 +189,7 @@ flowchart LR
             'polarization': lambda x: x.mode()[0],
             'rel_orbit': lambda x: x.mode()[0]}}`
    - S2 data was aggregated as follows:
-        -`{**{b: 'median' for b in band_cols},
+        -`{{b: 'median' for b in band_cols},
            'cloud_pct': 'median',
            'solar_azimuth': 'median',
            'solar_zenith': 'median'}`
@@ -213,20 +213,20 @@ flowchart LR
    - 'ID' : Unique identifier
    - 'region' : The region for the data point ( Fergana or Orenburg)
    - 'month' : Month of the year for the specific data point
-   
+
    Raw Bands : 
-    - 'B11','B12' : SWIR reflectance (moisture, soil, burn, mineral)
-    - 'B2': Blue reflectance (atmosphere/water penetration)
-    - 'B3': Green reflectance (vegetation “green peak”)
-    - 'B4': Red reflectance (chlorophyll absorption)
-    - 'B5','B6','B7' : Red-edge reflectance (chlorophyll/leaf structure sensitive)
-    - 'B8', 'B8A' : NIR reflectance (biomass/leaf structure)
+      - 'B11','B12' : SWIR reflectance (moisture, soil, burn, mineral)
+      - 'B2': Blue reflectance (atmosphere/water penetration)
+      - 'B3': Green reflectance (vegetation “green peak”)
+      - 'B4': Red reflectance (chlorophyll absorption)
+      - 'B5','B6','B7' : Red-edge reflectance (chlorophyll/leaf structure sensitive)
+      - 'B8', 'B8A' : NIR reflectance (biomass/leaf structure)
     
    Sar Channels :
-    - 'VH': Sentinel-1 backscatter (cross-pol); vegetation volume/structure
-    - 'VV' : Sentinel-1 backscatter (co-pol); geometry/roughness/moisture
-    - 'vh_vv_ratio' : Ratio VH/VV (phenology & moisture sensitive)
-    - 'vh_minus_vv' : VH − VV (difference highlighting structure)
+       - 'VH': Sentinel-1 backscatter (cross-pol); vegetation volume/structure
+       - 'VV' : Sentinel-1 backscatter (co-pol); geometry/roughness/moisture
+       - 'vh_vv_ratio' : Ratio VH/VV (phenology & moisture sensitive)
+       - 'vh_minus_vv' : VH − VV (difference highlighting structure)
    
    Core Vegetation Indices : 
     - 'GNDVI': Green NDVI: (B8 - B3)/(B8 + B3) — more sensitive to chlorophyll/nitrogen
