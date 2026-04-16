@@ -178,31 +178,31 @@ flowchart LR
   - Drop coordinate columns as these columns are masked on the test data thus may not bave relevant modelling information
     
   #### AGGREGATION
-   - s1_columns : [['VH', 'VV','orbit', 'polarization', 'rel_orbit', 'region', 'month']
+   - s1_columns : `[['VH', 'VV','orbit', 'polarization', 'rel_orbit', 'region', 'month']`
    - s2_columns :
-        i.) band_cols = ['B11','B12','B2','B3','B4','B5','B6','B7','B8','B8A']
-        ii.) meta_cols = ['cloud_pct','solar_azimuth','solar_zenith']
+        i.) band_cols = `['B11','B12','B2','B3','B4','B5','B6','B7','B8','B8A']`
+        ii.) meta_cols = `['cloud_pct','solar_azimuth','solar_zenith']`
   - The extracted and provided data was at a daily granular level. This was aggregated to ID-Region-Month level.
   - For S1 data, the following aggregations were taken :
-        - {'VH':'mean','VV':'mean',
+        - `{'VH':'mean','VV':'mean',
             'orbit':lambda x: x.mode()[0],
             'polarization': lambda x: x.mode()[0],
-            'rel_orbit': lambda x: x.mode()[0]}}
+            'rel_orbit': lambda x: x.mode()[0]}}`
   - S2 data was aggregated as follows:
-        -{**{b: 'median' for b in band_cols},
+        -`{**{b: 'median' for b in band_cols},
            'cloud_pct': 'median',
            'solar_azimuth': 'median',
-           'solar_zenith': 'median'}
+           'solar_zenith': 'median'}`
 - The aggregated s1 and s2 data were then combined for both the train and test data.
 
-   #### PRE-PROCESIING
+   #### PRE-PROCESSING
    - clip outliers using the 25 and 75 quantile values
    - Apply quantile mapping to reduce covariate shift between the train and test data
-   - Apply rebust scaling
+   - Apply robust scaling
    - Encode region column
 
    #### FEATURE ENGINEERING
-   - Develop vegetation indices (calculated using the band columns
+   - Develop vegetation indices (calculated using the band columns)
    - Add targeted seasonal features
    - Create ratio and difference features using S1 data
    - The data table is transformed from a long format (ID-Region-Month) to a wide format (ID-Region). Thi creates one row per ID with columns at time series monthly level
@@ -242,42 +242,42 @@ flowchart LR
     - 'RDVI': Renormalized DVI: (B8 - B4)/sqrt(B8 + B4) — linearizes NDVI vs. biomass
     
    Soil-adjusted & soil-related:
-    - 'BSI' : Bare Soil Index: ((B11 + B4) - (B8 + B2))/((B11 + B4) + (B8 + B2)) — bare ground vs veg
-    - 'SAVI' : Soil-Adjusted VI: (1+L)*(B8 - B4)/(B8 + B4 + L) (L≈0.5) — reduces soil background
-    - 'PVI' : Perpendicular VI: (B8 - a*B4 - b)/sqrt(1+a^2) (uses soil-line slope a, intercept b)
-    - 'OSAVI' : Optimized SAVI: (B8 - B4)/(B8 + B4 + 0.16) — fixed L=0.16
-    - 'SI' : Shadow Index: ((1 - B2)*(1 - B3)*(1 - B4))^(1/3) — self-shadowing detection
+    - 'BSI' : Bare Soil Index: `((B11 + B4) - (B8 + B2))/((B11 + B4) + (B8 + B2))` — bare ground vs veg
+    - 'SAVI' : Soil-Adjusted VI: `(1+L)*(B8 - B4)/(B8 + B4 + L) (L≈0.5)` — reduces soil background
+    - 'PVI' : Perpendicular VI: `(B8 - a*B4 - b)/sqrt(1+a^2)` (uses soil-line slope a, intercept b)
+    - 'OSAVI' : Optimized SAVI: `(B8 - B4)/(B8 + B4 + 0.16)` — fixed L=0.16
+    - 'SI' : Shadow Index: `((1 - B2)*(1 - B3)*(1 - B4))^(1/3)` — self-shadowing detection
    
    Water / moisture:
-    - 'NDWI' : (McFeeters water bodies): (B3 - B8)/(B3 + B8) — surface water highlight
-    - 'MNDWI' : Modified NDWI (Xu): (B3 - B11)/(B3 + B11) — suppresses built-up, enhances water
-    - 'NDMI' : (aka NDWI-Gao vegetation water): (B8 - B11)/(B8 + B11) — canopy moisture
-    - 'MI' : Moisture Stress Index (often labeled MI/MSI): B11/B8 — higher values = drier canopy
+    - 'NDWI' : (McFeeters water bodies): `(B3 - B8)/(B3 + B8)` — surface water highlight
+    - 'MNDWI' : Modified NDWI (Xu): `(B3 - B11)/(B3 + B11)` — suppresses built-up, enhances water
+    - 'NDMI' : (aka NDWI-Gao vegetation water): `(B8 - B11)/(B8 + B11)` — canopy moisture
+    - 'MI' : Moisture Stress Index (often labeled MI/MSI): `B11/B8` — higher values = drier canopy
    
    Red-edge & chlorophyll proxies:
-    - 'NDRE' : Red-edge NDVI: (B8 - B5)/(B8 + B5) — chlorophyll at higher LAI
-    - 'NDVIre' : NDVI with red-edge (one common S2 form): (B8A - B6)/(B8A + B6) — greenness using RE
-    - 'CIre' ; Chlorophyll Index (red-edge): (B8/B5) - 1
-    - 'RENDVI' : Red-edge NDVI (705/750 nm): (B6 - B5)/(B6 + B5) — stress/Chl changes
-    - 'CCCI' : Canopy Chl Content Index: NDRE / NDVI — chlorophyll normalized by greenness
-    - 'MCARI' : Modified Chlorophyll Absorption Ratio Index: ((B5 - B4) - 0.2*(B5 - B3))*(B5/B4) — chlorophyll/structure
-    - 'MTCI' : MERIS Terrestrial Chl Index (S2 approx.): (B6 - B5)/(B7 - B6) — canopy chlorophyll
-    - 'S2REP' : S2 Red-Edge Position (nm): 705 + 35 * (((B7 + B4)/2 - B5)/(B6 - B5)) — pigment/Chl shift
+    - 'NDRE' : Red-edge NDVI: `(B8 - B5)/(B8 + B5)` — chlorophyll at higher LAI
+    - 'NDVIre' : NDVI with red-edge (one common S2 form): `(B8A - B6)/(B8A + B6)` — greenness using RE
+    - 'CIre' ; Chlorophyll Index (red-edge): `(B8/B5) - 1`
+    - 'RENDVI' : Red-edge NDVI (705/750 nm): `(B6 - B5)/(B6 + B5)` — stress/Chl changes
+    - 'CCCI' : Canopy Chl Content Index: `NDRE / NDVI` — chlorophyll normalized by greenness
+    - 'MCARI' : Modified Chlorophyll Absorption Ratio Index: `((B5 - B4) - 0.2*(B5 - B3))*(B5/B4)` — chlorophyll/structure
+    - 'MTCI' : MERIS Terrestrial Chl Index (S2 approx.): `(B6 - B5)/(B7 - B6)` — canopy chlorophyll
+    - 'S2REP' : S2 Red-Edge Position (nm): `705 + 35 * (((B7 + B4)/2 - B5)/(B6 - B5))` — pigment/Chl shift
    
    Pigments / senescence / stress : 
-    - 'ARVI': Atmospherically Resistant VI: (B8 - (2*B4 - B2))/(B8 + (2*B4 - B2)) — aerosol-robust greenness
-    - 'SIPI' : Structure-Insensitive Pigment Index: (B8 - B1)/(B8 - B4) (common variant uses blue instead of aerosol: (B8 - B2)/(B8 - B4)) — carotenoids vs chlorophyll (stress)
-    - 'PSRI' : Plant Senescence Reflectance Index: (B4 - B2)/B6 (R−B over RE) — carotenoid/chl ratio, senescence
+    - 'ARVI': Atmospherically Resistant VI: `(B8 - (2*B4 - B2))/(B8 + (2*B4 - B2))` — aerosol-robust greenness
+    - 'SIPI' : Structure-Insensitive Pigment Index: `(B8 - B1)/(B8 - B4)` (common variant uses blue instead of aerosol: (B8 - B2)/(B8 - B4)) — carotenoids vs chlorophyll (stress)
+    - 'PSRI' : Plant Senescence Reflectance Index: `(B4 - B2)/B6` — carotenoid/chl ratio, senescence
    
    Yellowness / flowering (useful in drylands & croplands)  
     - 'RYI' ; Ratio Yellowness Index (common in flowering studies; exact variant differs by paper, e.g., green/blue or red/yellow ratio)
-    - 'NDYI' : Normalized Difference Yellowness Index: (B3 - B2)/(B3 + B2) — blooming/yellow flowers (canola, trees)
-    - 'DYI' : Difference Yellowness Index: (B3 - B2) — simple green–blue difference for yellowing
+    - 'NDYI' : Normalized Difference Yellowness Index: `(B3 - B2)/(B3 + B2)` — blooming/yellow flowers (canola, trees)
+    - 'DYI' : Difference Yellowness Index: `(B3 - B2)` — simple green–blue difference for yellowing
    
    Water/ice & burn:
-    - 'BAI' ; Burn Area Index: 1/((0.1 - B4)^2 + (0.06 - B8)^2) — highlights burned targets
-    - 'NDSI' : Normalized Difference Snow Index: (B3 - B11)/(B3 + B11) — snow/ice masking
-    - 'NBR' : Normalized Burn Ratio: (B8 - B12)/(B8 + B12) — burn severity; post-fire differencing often used
+    - 'BAI' ; Burn Area Index: `1/((0.1 - B4)^2 + (0.06 - B8)^2)` — highlights burned targets
+    - 'NDSI' : Normalized Difference Snow Index: `(B3 - B11)/(B3 + B11)` — snow/ice masking
+    - 'NBR' : Normalized Burn Ratio: `(B8 - B12)/(B8 + B12)` — burn severity; post-fire differencing often used
      
    Others:
      - 'MMSR' : Typically refers to a Modified (Modified) Simple Ratio variant using red-edge bands; a common related index is MSR705
